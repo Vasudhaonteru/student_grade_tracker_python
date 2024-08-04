@@ -1,0 +1,62 @@
+class Student:
+    def __init__(self):
+        self.roll = 0
+        self.name = ""
+        self.marks = []
+        self.total = 0
+        self.percentage = 0
+        self.grade = ""
+        self.result = ""
+
+    def set_student(self):
+        self.roll = int(input("Enter Roll: "))
+        self.name = input("Enter Name: ")
+        print("Enter marks of 5 subjects:")
+        for i in range(5):
+            self.marks.append(int(input(f"Subject {i + 1}: ")))
+
+    def calculate_total(self):
+        self.total = sum(self.marks)
+
+    def calculate_percentage(self):
+        self.percentage = self.total / 5
+
+    def calculate_grade(self):
+        if self.percentage >= 85:
+            self.grade = "S"
+        elif self.percentage >= 75:
+            self.grade = "A"
+        elif self.percentage >= 65:
+            self.grade = "B"
+        elif self.percentage >= 55:
+            self.grade = "C"
+        elif self.percentage >= 50:
+            self.grade = "D"
+        else:
+            self.grade = "F"
+
+    def calculate_result(self):
+        count = sum(1 for x in self.marks if x >= 50)
+        if count == 5:
+            self.result = "PASS"
+        elif count >= 3:
+            self.result = "COMP."
+        else:
+            self.result = "FAIL"
+
+    def show_student(self):
+        self.calculate_total()
+        self.calculate_percentage()
+        self.calculate_grade()
+        self.calculate_result()
+        print(f"Roll: {self.roll}\tName: {self.name}\tTotal Marks: {self.total}\tPercentage: {self.percentage:.2f}%\tGrade: {self.grade}\tResult: {self.result}")
+
+
+def main():
+    s = Student()
+    s.set_student()
+    s.show_student()
+
+
+if __name__ == "__main__":
+    main()
