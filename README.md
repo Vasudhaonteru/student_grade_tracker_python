@@ -30,3 +30,15 @@ Features:
 - Grade tracking and calculation (GPA, course averages)
 - Transcripts and grade reports generation
 - Data persistence (stored in a file or database)
+
+OUTPUT of student_grade_tracker_python
+
+Enter Roll: 1236
+Enter Name: Vasudha
+Enter marks of 5 subjects:
+Subject 1: 89
+Subject 2: 69
+Subject 3: 75
+Subject 4: 91
+Subject 5: 80
+Roll: 1236      Name: Vasudha   Total Marks: 404        Percentage: 80.80%      Grade: A        Result: PASS
